@@ -1,9 +1,9 @@
 [project]
 name = "cookiecutter"
-version = "2.6.0"
+version = "2.7.1"
 description = "A command-line utility that creates projects from project templates, e.g. creating a Python package project from a Python package project template."
 readme = "README.md"
-authors = [{ name = "Audrey Roy Greenfeld", email = "audrey@feldroy.com" }]
+authors = [{ name = "Audrey M. Roy Greenfeld", email = "audrey@feldroy.com" }]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -11,11 +11,11 @@ classifiers = [
     "Natural Language :: English",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Programming Language :: Python",
@@ -43,7 +43,7 @@ dependencies = [
     "arrow",
     "rich",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 [project.urls]
 Homepage = "https://github.com/cookiecutter/cookiecutter"
@@ -76,8 +76,11 @@ test = [
     "pytest-cov",
     "pytest-mock",
     "freezegun",
+]
+
+lint = [
+    "ruff",
     "safety",
-    "ruff"
 ]
 
 [tool.pytest.ini_options]
@@ -91,7 +94,7 @@ ignore = ["D001"]
 
 [tool.ruff]
 
-target-version = "py39"
+target-version = "py310"
 
 [tool.ruff.lint]
 
@@ -150,8 +153,6 @@ select = [
 # pydocstyle.convention = "google"
 
 ignore = [
-    "ANN101", # missing type annotation for 'self' in method
-    "ANN102", # missing type annotation for 'cls' in method
     "B028",   # No explicit `stacklevel` keyword argument found
     "COM812", # ignore when using ruff-format
     "G004",   # Logging statement uses f-string
